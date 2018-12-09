@@ -1,0 +1,30 @@
+<div class="main-wrapper container text-center">
+  <div class="dpt-logo-main">
+    <img src="assets/original.png">
+  </div>
+  <div class="search-type">
+    <p>Ищем</p>
+    <button mat-raised-button
+            color="primary"
+            class="ml-2 mr-2 searching-target"
+            (click)="isProducts = false"
+            [disabled]="!isProducts">Комании</button>
+    <button mat-raised-button
+            color="primary"
+            class="ml-2 mr-2 searching-target"
+            (click)="isProducts = true"
+            [disabled]="isProducts">Продукты</button>
+  </div>
+  <br>
+  <div class="search-block">
+    <input type="text" class="search-block-input" placeholder="{{typewriter_display}}">
+
+    <div class="search-block-actions mt-4">
+      <button mat-raised-button class="search-block-actions_item ml-2 mr-2">Искать</button>
+      <button mat-raised-button class="search-block-actions_item ml-2 mr-2">Мне повезет!</button>
+    </div>
+  </div>
+  <div class="actions-block">
+
+  </div>
+</div>

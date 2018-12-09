@@ -1,0 +1,47 @@
+.header-content
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  .logo
+    display: flex
+    align-items: center
+    .submenu
+      button
+        text-transform: uppercase
+        &:focus
+          outline: none
+
+::ng-deep .searching-target
+  text-transform: uppercase
+  &:focus
+    outline: none
+.search
+  display: flex
+  align-items: center
+  button
+    border: none
+    border-radius: 50px
+    background: transparent
+    margin-left: -40px
+    vertical-align: sub
+    &:focus
+      outline: none
+  input
+    height: 2rem
+    background-color: #fff
+    border-radius: 50px
+    border: none
+    padding: 0 15px
+    font-size: 1rem
+    color: #232323
+    &:focus
+      outline: none
+
+::ng-deep .search-block-actions_item
+  text-transform: uppercase
+  font-weight: bold
+  background-color: rgba(241, 241, 241, 0.81)
+  color: rgba(95, 95, 95, 0.91)
+  &:focus
+    outline: none

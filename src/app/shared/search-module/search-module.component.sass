@@ -1,0 +1,38 @@
+.main-wrapper
+  //height: 85vh
+
+.search-type
+  //padding-top: 25%
+
+.example-form
+  width: 100%
+
+::ng-deep .option-mat
+  height: unset !important
+  line-height: 1.3rem !important
+
+::ng-deep .option-card
+  margin: 20px 5px
+  .card-wrapper
+    display: flex
+    ::ng-deep .mat-card-header
+      width: 30% !important
+    p
+      margin: 0
+
+::ng-deep .mat-autocomplete-panel
+  max-height: 500px!important
+
+.search-block
+  display: flex
+  justify-content: space-between
+  &-input
+    &:focus
+      outline: none
+    border: none
+    border-radius: 50px
+    height: 2.5rem
+    width: 100%
+    background: rgba(204, 204, 204, 0.61)
+    font-size: 1.2rem
+    padding: 0 50px

@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { ProductsComponent } from './products/products.component';
 import { CompaniesComponent } from './companies/companies.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -14,8 +14,15 @@ import {
   MatButtonModule,
   MatCardModule, MatDividerModule, MatExpansionModule,
   MatFormFieldModule, MatIconModule,
-  MatInputModule, MatPaginatorModule, MatSortModule, MatToolbarModule
+  MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSlideToggleModule, MatSortModule, MatToolbarModule
 } from "@angular/material";
+import { MainComponent } from './main/main.component';
+import {CommonModule} from "@angular/common";
+import { SearchModuleComponent } from './shared/search-module/search-module.component';
+import {SearchService} from "./search.service";
+import {HttpClientModule} from "@angular/common/http";
+import {HttpClientJsonpModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,12 +31,20 @@ import {
     HeaderComponent,
     FooterComponent,
     ProductsComponent,
-    CompaniesComponent
+    CompaniesComponent,
+    MainComponent,
+    SearchModuleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
@@ -40,9 +55,10 @@ import {
     MatToolbarModule,
     MatSortModule,
     MatPaginatorModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSlideToggleModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

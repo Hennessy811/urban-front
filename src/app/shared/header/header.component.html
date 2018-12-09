@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <div class="container header-content">
+
+  <div class="logo">
+    <span [routerLink]="['/']">ДПиИР {{ currentPath === 'companies' ? '- Организации' : (currentPath === 'products' ? '- Продукты' : '')}}</span>
+    <div class="submenu">
+      <button mat-flat-button class="ml-3"
+              [routerLink]="['/companies']"
+              *ngIf="currentPath !== 'companies'"
+      >Организации</button>
+      <button mat-flat-button class="ml-3"
+              [routerLink]="['/products']"
+              *ngIf="currentPath !== 'products'"
+      >Продукты</button>
+    </div>
+  </div>
+
+  <div class="search">
+    <mat-slide-toggle
+      (toggleChange)="isProducts = !isProducts"
+      [checked]="true">
+    </mat-slide-toggle>
+
+    <form class="search-type-form ml-3">
+      <input placeholder="Поиск по {{isProducts ? 'продуктам' : 'компаниям'}}">
+      <button (click)="getData()" type="button">
+        <mat-icon>
+          search
+        </mat-icon>
+      </button>
+    </form>
+  </div>
+  </div>
+</mat-toolbar>
